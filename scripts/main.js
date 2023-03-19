@@ -90,7 +90,7 @@ function getRecipes() {
     const recipes = [];
     for (let cocktail in cocktails) {
         if (checkIngredients(ingredients, cocktails[cocktail].ingredients)) {
-            recipes.push(`<h2>${cocktail}</h2><p>${cocktails[cocktail].recipe}</p>`);
+            recipes.push(<p>${cocktails[cocktail].recipe}</p>);
         }
     }
     document.getElementById("recipes").innerHTML = recipes.join("");
