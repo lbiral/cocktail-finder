@@ -12,13 +12,14 @@ template = """
 </head>
 <body>
     <h1>{name}</h1>
-    <img src="{img}" alt="{name}">
+    <img src="{img}" alt="{name}" width="300">
     <h2>Ingredients</h2>
     <ul>
         {ingredients}
     </ul>
     <h2>Recipe</h2>
     <p>{recipe}</p>
+    <a href="index.html">Back to Cocktail Finder</a>
 </body>
 </html>
 """
