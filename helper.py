@@ -1,0 +1,15 @@
+f = open('js/cocktails.js')
+file = f.read()
+f.close()
+
+file = file.replace('const cocktails = ','')
+file = file.replace("'",'"')
+file = file.replace("id:",'"id":')
+file = file.replace("name:",'"name":')
+file = file.replace("ingredients:",'"ingredients":')
+file = file.replace("recipe:",'"recipe":')
+file = file.replace("img:",'"img":')
+
+write_out = open('cocktails.json','w')
+write_out.write(file)
+write_out.close()

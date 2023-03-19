@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cocktail Recipes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocktail Finder</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Cocktail Recipes</h1>
-    <label for="ingredients">Enter ingredients separated by commas:</label>
-    <input type="text" id="ingredients">
-    <button onclick="getRecipes()">Search</button>
-    <div id="recipes"></div>
-    <script src="cocktails.js"></script>
-    <script src="script.js"></script>
+    <h1>Cocktail Finder</h1>
+    <input type="text" id="search" placeholder="Search ingredients...">
+    <ul id="cocktail-list"></ul>
+    <script src="js/cocktails.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
