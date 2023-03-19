@@ -1,2 +1,2 @@
 # cocktail-recipes
-Website that tells you the cocktails you can make given a list of ingredients
+Simple website that gives you a list of cocktails you can make with a specified ingredient entered into the search bar. Clicking on a cocktail gives you the full ingredient list, the recipe, and an image.
