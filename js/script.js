@@ -1,4 +1,3 @@
-const search = document.getElementById('search');
 const cocktailsList = document.getElementById('cocktails-list');
 
 function createCocktailElement(cocktail) {
@@ -22,16 +21,11 @@ function searchCocktails() {
     const searchInput = document.getElementById('search-input').value.toLowerCase().trim();
     const ingredients = searchInput.split(',').map(ingredient => ingredient.trim());
 
-    const results = cocktails.filter(cocktail => {
+    const results = cocktailsData.filter(cocktail => {
         return ingredients.every(ingredient => cocktail.ingredients.includes(ingredient));
     });
 
     displayResults(results);
 }
 
-// Event listener for search button
 document.getElementById('search-button').addEventListener('click', searchCocktails);
-
-// Display all cocktails by default
-displayResults(cocktails);
-
