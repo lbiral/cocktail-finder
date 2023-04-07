@@ -40,13 +40,23 @@ function displayResults(cocktails) {
 const searchInput = document.getElementById('search-input');
 function searchCocktails() {
     const inputValue = searchInput.value.toLowerCase().trim();
-    const ingredients = inputValue.split(',').map(ingredient => ingredient.trim());
+    const ingredients = inputValue.value
+        .split(',')
+        .map(ingredient => ingredient.trim())
+        .filter(ingredient => ingredient !== '');
 
-    const results = cocktailsData.filter(cocktail => {
-        return ingredients.every(ingredient => cocktail.ingredients.includes(ingredient));
-    });
+    if (ingredients.length === 0) {
+        cocktailsList.innerHTML = '';
+        resultsHeader.style.display = 'none';
+        noResultsMessage.style.display = 'none';
+        return;
+    }
 
-    displayResults(results);
+    const matchedCocktails = cocktailsData.filter(cocktail =>
+        cocktail.ingredients.every(ingredient => ingredients.includes(ingredient))
+    );
+
+    displayResults(matchedCocktails);
 }
 
 const autocompleteList = document.getElementById('autocomplete-list');
