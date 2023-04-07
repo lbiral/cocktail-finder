@@ -23,36 +23,23 @@ function createCocktailElement(cocktail) {
     return li;
 }
 
-const resultsHeader = document.getElementById('results-header');
-const noResultsMessage = document.getElementById('no-results-message');
-const searchInput = document.getElementById('search-input');
-
-function displayResults(cocktails) {
+function displayResults(results) {
     cocktailsList.innerHTML = '';
-    resultsHeader.style.display = searchInput.length === 0 ? 'block' : 'none';
-    noResultsMessage.style.display = cocktails.length === 0 ? 'block' : 'none';
-
-    cocktails.forEach((cocktail) => {
+    results.forEach(cocktail => {
         const cocktailElement = createCocktailElement(cocktail);
         cocktailsList.appendChild(cocktailElement);
     });
 }
-
+const searchInput = document.getElementById('search-input');
 function searchCocktails() {
-    const ingredients = searchInput.value.split(',').map(ingredient => ingredient.trim()).filter(ingredient => ingredient !== '');
+    const inputValue = searchInput.value.toLowerCase().trim();
+    const ingredients = inputValue.split(',').map(ingredient => ingredient.trim());
 
-    if (ingredients.length === 0) {
-        cocktailsList.innerHTML = '';
-        resultsHeader.style.display = 'none';
-        noResultsMessage.style.display = 'none';
-        return;
-    }
+    const results = cocktailsData.filter(cocktail => {
+        return ingredients.every(ingredient => cocktail.ingredients.includes(ingredient));
+    });
 
-    const matchedCocktails = cocktailsData.filter(cocktail =>
-        cocktail.ingredients.every(ingredient => ingredients.includes(ingredient))
-    );
-
-    displayResults(matchedCocktails);
+    displayResults(results);
 }
 
 const autocompleteList = document.getElementById('autocomplete-list');
