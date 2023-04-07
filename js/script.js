@@ -23,13 +23,20 @@ function createCocktailElement(cocktail) {
     return li;
 }
 
-function displayResults(results) {
+const resultsHeader = document.getElementById('results-header');
+const noResultsMessage = document.getElementById('no-results-message');
+
+function displayResults(cocktails) {
     cocktailsList.innerHTML = '';
-    results.forEach(cocktail => {
+    resultsHeader.style.display = 'block';
+    noResultsMessage.style.display = cocktails.length === 0 ? 'block' : 'none';
+
+    cocktails.forEach((cocktail) => {
         const cocktailElement = createCocktailElement(cocktail);
         cocktailsList.appendChild(cocktailElement);
     });
 }
+
 const searchInput = document.getElementById('search-input');
 function searchCocktails() {
     const inputValue = searchInput.value.toLowerCase().trim();
