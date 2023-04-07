@@ -28,4 +28,6 @@ function searchCocktails() {
     displayResults(results);
 }
 
-document.getElementById('search-button').addEventListener('click', searchCocktails);
+searchInput.addEventListener('input', searchCocktails);
+
+displayResults(cocktailsData);
