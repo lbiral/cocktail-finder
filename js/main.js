@@ -3,7 +3,11 @@ const cocktailList = document.getElementById('cocktail-list');
 
 search.addEventListener('input', () => {
     const searchTerm = search.value.trim().toLowerCase();
-    const matchingCocktails = cocktails.filter(cocktail => cocktail.ingredients.some(ingredient => ingredient.toLowerCase().includes(searchTerm)));
+    const ingredients = searchTerm.split(',').map(ingredient => ingredient.trim());
+
+    const matchingCocktails = cocktails.filter(cocktail => {
+        return ingredients.every(ingredient => cocktail.ingredients.includes(ingredient));
+    });
 
     cocktailList.innerHTML = '';
     for (const cocktail of matchingCocktails) {
