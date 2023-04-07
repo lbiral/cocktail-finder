@@ -29,5 +29,3 @@ function searchCocktails() {
 }
 
 searchInput.addEventListener('input', searchCocktails);
-
-displayResults(cocktailsData);
