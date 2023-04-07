@@ -25,10 +25,11 @@ function createCocktailElement(cocktail) {
 
 const resultsHeader = document.getElementById('results-header');
 const noResultsMessage = document.getElementById('no-results-message');
+const searchInput = document.getElementById('search-input');
 
 function displayResults(cocktails) {
     cocktailsList.innerHTML = '';
-    resultsHeader.style.display = 'block';
+    resultsHeader.style.display = searchInput.length === 0 ? 'block' : 'none';
     noResultsMessage.style.display = cocktails.length === 0 ? 'block' : 'none';
 
     cocktails.forEach((cocktail) => {
@@ -37,7 +38,6 @@ function displayResults(cocktails) {
     });
 }
 
-const searchInput = document.getElementById('search-input');
 function searchCocktails() {
     const inputValue = searchInput.value.toLowerCase().trim();
     const ingredients = inputValue.value.split(',').map(ingredient => ingredient.trim()).filter(ingredient => ingredient !== '');
