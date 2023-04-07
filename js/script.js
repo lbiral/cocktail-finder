@@ -39,8 +39,7 @@ function displayResults(cocktails) {
 }
 
 function searchCocktails() {
-    const inputValue = searchInput.value.toLowerCase().trim();
-    const ingredients = inputValue.value.split(',').map(ingredient => ingredient.trim()).filter(ingredient => ingredient !== '');
+    const ingredients = searchInput.value.split(',').map(ingredient => ingredient.trim()).filter(ingredient => ingredient !== '');
 
     if (ingredients.length === 0) {
         cocktailsList.innerHTML = '';
