@@ -34,7 +34,7 @@ def create_cocktail_html(cocktail):
     print(f'Generated: {filename}')
 
 def main():
-    with open('cocktails.json', 'r') as f:
+    with open('data/cocktails.json', 'r') as f:
         cocktails = json.load(f)
     
     for cocktail in cocktails:

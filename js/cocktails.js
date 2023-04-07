@@ -2,8 +2,8 @@ const cocktails = [
     {
         id: 1,
         name: 'Mojito',
-        ingredients: ['rum', 'mint', 'lime', 'sugar', 'soda'],
-        recipe: 'Muddle 10 mint leaves with 2 tsp sugar and the juice of half a lime. Add a splash of soda water and fill the glass with cracked ice. Pour 2 oz of white rum and top with soda water. Garnish with mint leaves and a lime wedge.',
+        ingredients: ['light rum', 'mint', 'lime', 'sugar', 'soda'],
+        recipe: 'Muddle 10 mint leaves with 2 tsp sugar and the juice of half a lime. Add a splash of soda water and fill the glass with cracked ice. Pour 2 oz of light rum and top with soda water. Garnish with mint leaves and a lime wedge.',
         img: 'img/mojito.jpg'
     },
     {
@@ -30,8 +30,8 @@ const cocktails = [
     {
         id: 5,
         name: 'Piña Colada',
-        ingredients: ['rum', 'coconut cream', 'pineapple'],
-        recipe: 'In a blender, combine 2 oz white rum, 3 oz pineapple juice, and 1.5 oz coconut cream. Blend until smooth. Pour into a glass filled with ice. Garnish with a pineapple wedge and a cherry.',
+        ingredients: ['light rum', 'coconut cream', 'pineapple'],
+        recipe: 'In a blender, combine 2 oz light rum, 3 oz pineapple juice, and 1.5 oz coconut cream. Blend until smooth. Pour into a glass filled with ice. Garnish with a pineapple wedge and a cherry.',
         img: 'img/pina_colada.jpg'
     },
     {
@@ -44,8 +44,8 @@ const cocktails = [
     {
         id: 7,
         name: 'Daiquiri',
-        ingredients: ['rum', 'lime', 'simple syrup'],
-        recipe: 'In a shaker, combine 2 oz white rum, 1 oz freshly squeezed lime juice, and 0.75 oz simple syrup. Shake well and strain into a chilled coupe glass. Garnish with a lime wheel.',
+        ingredients: ['light rum', 'lime', 'simple syrup'],
+        recipe: 'In a shaker, combine 2 oz light rum, 1 oz freshly squeezed lime juice, and 0.75 oz simple syrup. Shake well and strain into a chilled coupe glass. Garnish with a lime wheel.',
         img: 'img/daiquiri.jpg'
     },
     {
@@ -147,12 +147,12 @@ const cocktails = [
         img: 'img/campari_spritz.jpg'
         },
         {
-            id: 22,
-            name: 'Americano',
-            ingredients: ['campari', 'sweet vermouth', 'soda', 'orange'],
-recipe: 'Pour 1.5 oz Campari and 1.5 oz sweet vermouth into a glass filled with ice. Top with soda water and stir gently. Garnish with an orange wheel.',
-img: 'img/americano.jpg'
-},
+        id: 22,
+        name: 'Americano',
+        ingredients: ['campari', 'sweet vermouth', 'soda', 'orange'],
+        recipe: 'Pour 1.5 oz Campari and 1.5 oz sweet vermouth into a glass filled with ice. Top with soda water and stir gently. Garnish with an orange wheel.',
+        img: 'img/americano.jpg'
+        },
 {
 id: 23,
 name: 'Negroni Sbagliato',
@@ -170,8 +170,8 @@ img: 'img/gin_tonic.jpg'
 {
 id: 25,
 name: 'Rum & Coke',
-ingredients: ['rum', 'coke', 'lime'],
-recipe: 'Pour 2 oz rum into a glass filled with ice. Top with 4 oz Coke. Stir gently and garnish with a lime wheel.',
+ingredients: ['light rum', 'coke', 'lime'],
+recipe: 'Pour 2 oz light rum into a glass filled with ice. Top with 4 oz Coke. Stir gently and garnish with a lime wheel.',
 img: 'img/rum_coke.jpg'
 },
 {
@@ -212,8 +212,8 @@ img: 'img/planters_punch.jpg'
     {
         id: 31,
         name: 'Long Island Iced Tea',
-        ingredients: ['vodka', 'tequila', 'rum', 'gin', 'orange liqueur', 'lemon', 'cola'],
-        recipe: 'In a shaker, combine 0.5 oz vodka, 0.5 oz tequila, 0.5 oz rum, 0.5 oz gin, 0.5 oz orange liqueur, and 0.75 oz freshly squeezed lemon juice. Shake well and strain into a glass filled with ice. Top with a splash of cola and garnish with a lemon wheel.',
+        ingredients: ['vodka', 'tequila', 'light rum', 'gin', 'orange liqueur', 'lemon', 'cola'],
+        recipe: 'In a shaker, combine 0.5 oz vodka, 0.5 oz tequila, 0.5 oz light rum, 0.5 oz gin, 0.5 oz orange liqueur, and 0.75 oz freshly squeezed lemon juice. Shake well and strain into a glass filled with ice. Top with a splash of cola and garnish with a lemon wheel.',
         img: 'img/long_island_iced_tea.jpg'
     },
     {
@@ -289,8 +289,8 @@ img: 'img/planters_punch.jpg'
         {
         id: 42,
         name: 'Cuba Libre',
-        ingredients: ['rum', 'coke', 'lime'],
-        recipe: 'Pour 2 oz rum into a glass filled with ice. Squeeze half a lime into the glass, then top with 4 oz Coke. Stir gently and garnish with a lime wheel.',
+        ingredients: ['light rum', 'coke', 'lime'],
+        recipe: 'Pour 2 oz light rum into a glass filled with ice. Squeeze half a lime into the glass, then top with 4 oz Coke. Stir gently and garnish with a lime wheel.',
         img: 'img/cuba_libre.jpg'
         },
         {
@@ -324,8 +324,8 @@ img: 'img/planters_punch.jpg'
             {
             id: 47,
             name: 'Old Cuban',
-            ingredients: ['rum', 'mint', 'lime', 'simple syrup', 'bitters', 'champagne'],
-            recipe: 'In a shaker, muddle 6-8 mint leaves with 0.75 oz freshly squeezed lime juice and 0.5 oz simple syrup. Add 1.5 oz rum and 2 dashes of bitters. Shake well and strain into a chilled coupe glass. Top with 2 oz champagne and garnish with a mint sprig.',
+            ingredients: ['dark rum', 'mint', 'lime', 'simple syrup', 'bitters', 'champagne'],
+            recipe: 'In a shaker, muddle 6-8 mint leaves with 0.75 oz freshly squeezed lime juice and 0.5 oz simple syrup. Add 1.5 oz dark rum and 2 dashes of bitters. Shake well and strain into a chilled coupe glass. Top with 2 oz champagne and garnish with a mint sprig.',
             img: 'img/old_cuban.jpg'
             },
             {
