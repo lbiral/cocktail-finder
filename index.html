@@ -4,13 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cocktail Finder</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <h1>Cocktail Finder</h1>
-    <input type="text" id="search-input" placeholder="Enter ingredients separated by commas" oninput="searchCocktails()">
-    <ul id="cocktail-list"></ul>
-    <script src="js/cocktails.js"></script>
-    <script src="js/main.js"></script>
+    <input type="text" id="search-input" placeholder="Enter ingredients separated by commas">
+    <button id="search-button">Search</button>
+    <ul id="cocktails-list"></ul>
+    <script src="js/script.js"></script>
+    <script>
+        fetch('data/cocktails.json')
+            .then(response => response.json())
+            .then(data => {
+                window.cocktailsData = data;
+                displayResults(cocktailsData);
+            });
+    </script>
 </body>
 </html>
