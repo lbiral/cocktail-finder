@@ -34,7 +34,9 @@ function createAutocompleteElement(ingredient) {
     const li = document.createElement('li');
     li.textContent = ingredient;
     li.onclick = function () {
-        searchInput.value += li.textContent;
+        const ingredients = searchInput.value.split(',').map(ingredient => ingredient.trim());
+        ingredients[ingredients.length - 1] = li.textContent;
+        searchInput.value = ingredients.join(', ');
         autocompleteList.innerHTML = '';
     };
     return li;
