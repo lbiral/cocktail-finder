@@ -1,3 +1,17 @@
+function debounce(func, wait) {
+    let timeout;
+
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
 const cocktailsList = document.getElementById('cocktails-list');
 
 function createCocktailElement(cocktail) {
@@ -53,7 +67,7 @@ function updateAutocomplete(ingredient) {
         .flatMap(cocktail => cocktail.ingredients)
         .filter(
             (ing, index, self) =>
-                ing.toLowerCase().startsWith(ingredient.toLowerCase()) &&
+                ing.toLowerCase().includes(ingredient.toLowerCase()) &&
                 self.indexOf(ing) === index
         );
 
@@ -70,5 +84,10 @@ searchInput.addEventListener('input', () => {
         .pop();
 
     updateAutocomplete(lastIngredient);
-    searchCocktails();
 });
+
+// Debounce the searchCocktails function (adjust the wait time as needed, e.g., 300ms)
+const debouncedSearchCocktails = debounce(searchCocktails, 300);
+
+// Event listener for autocomplete input (listen for changes to the input value)
+searchInput.addEventListener('input', debouncedSearchCocktails);
