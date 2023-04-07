@@ -16,10 +16,10 @@ function displayResults(results) {
         cocktailsList.appendChild(cocktailElement);
     });
 }
-
+const searchInput = document.getElementById('search-input');
 function searchCocktails() {
-    const searchInput = document.getElementById('search-input').value.toLowerCase().trim();
-    const ingredients = searchInput.split(',').map(ingredient => ingredient.trim());
+    const inputValue = searchInput.value.toLowerCase().trim();
+    const ingredients = inputValue.split(',').map(ingredient => ingredient.trim());
 
     const results = cocktailsData.filter(cocktail => {
         return ingredients.every(ingredient => cocktail.ingredients.includes(ingredient));
