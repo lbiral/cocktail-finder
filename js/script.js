@@ -28,4 +28,45 @@ function searchCocktails() {
     displayResults(results);
 }
 
-searchInput.addEventListener('input', searchCocktails);
+const autocompleteList = document.getElementById('autocomplete-list');
+
+function createAutocompleteElement(ingredient) {
+    const li = document.createElement('li');
+    li.textContent = ingredient;
+    li.onclick = function () {
+        searchInput.value += li.textContent;
+        autocompleteList.innerHTML = '';
+    };
+    return li;
+}
+
+function updateAutocomplete(ingredient) {
+    autocompleteList.innerHTML = '';
+
+    if (ingredient.length === 0) {
+        return;
+    }
+
+    const suggestions = cocktailsData
+        .flatMap(cocktail => cocktail.ingredients)
+        .filter(
+            (ing, index, self) =>
+                ing.toLowerCase().startsWith(ingredient.toLowerCase()) &&
+                self.indexOf(ing) === index
+        );
+
+    suggestions.forEach(suggestion => {
+        const autocompleteElement = createAutocompleteElement(suggestion);
+        autocompleteList.appendChild(autocompleteElement);
+    });
+}
+
+searchInput.addEventListener('input', () => {
+    const lastIngredient = searchInput.value
+        .split(',')
+        .map(ingredient => ingredient.trim())
+        .pop();
+
+    updateAutocomplete(lastIngredient);
+    searchCocktails();
+});
