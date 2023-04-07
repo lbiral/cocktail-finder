@@ -52,6 +52,7 @@ function createAutocompleteElement(ingredient) {
         ingredients[ingredients.length - 1] = li.textContent;
         searchInput.value = ingredients.join(', ');
         autocompleteList.innerHTML = '';
+        searchCocktails(); 
     };
     return li;
 }
